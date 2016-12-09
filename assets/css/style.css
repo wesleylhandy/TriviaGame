@@ -1,0 +1,88 @@
+html {
+	min-height: 100%;
+	position: relative;
+}
+body {
+	background: url(../images/linedpaper/linedpaper.png);
+	font-family: 'Special Elite', cursive;
+	color: #333;
+	margin-bottom: 8.5em;
+}
+
+.jumbotron {
+	background-color: #ddd;
+	background: url(../images/The_Office_US_logo.png) no-repeat;
+	background-size: 100%;
+	color: red;
+}
+
+.jumbotron p {
+	/*filter: drop-shadow(0.03em 0.03em 0.06em red);*/
+}
+
+#game-area {
+	position: relative;
+}
+
+#logo {
+	position: absolute;
+	right: 0;
+	top: 5%;
+	transform: rotate(45deg);
+}
+
+#question-screen {
+	position: relative;
+}
+
+#timer {
+	position: absolute;
+	top: -1.25em;
+	left: 40%;
+	border: 4px solid red;
+	color: red;
+	font-size: 300%;
+}
+
+#question {
+	margin-top: 1em;
+}
+
+.choice:hover {
+    filter: drop-shadow(0.063em 0.063em 0em red);
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: pink;
+    box-sizing: border-box;
+}
+#result-screen, #end-screen {
+	display: none;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 6em;
+	background-color: pink;
+	border-top-style: solid;
+	border-top-color: red;
+	border-top-width: .325em;
+}
+
+.footer a:link {
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+}
+
+.footer a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.footer a:hover {
+    filter: drop-shadow(0.063em 0.063em 0em red);
+}

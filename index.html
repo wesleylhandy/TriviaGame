@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Trivia</title>
+
+	<!--Meyer reset-->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!--Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--Google Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+	<!--Font Awesome-->
+    <script src="https://use.fontawesome.com/5f1f3cb4d3.js"></script>
+	<!--custom css-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!--jQuery-->
+	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- page header -->
+<div class = "container">
+	<div class = "jumbotron">
+		<p class = "h1 text-center">Trivia Game</p>
+	</div>
+</div>
+
+<!-- game area -->
+<div class = "container">
+	<div class = "well" id = "game-area">
+
+		<div id = "logo">
+			<img class = "thumbnail" src="assets/images/Dunder_Mifflin_Inc.png" alt="Dunder Mifflin Logo">
+		</div>
+
+		<div class = "row" id = "question-screen">
+
+			<div id = "timer" class = "col-xs-10 col-sm-6 col-md-2 col-lg-2 text-center panel">00:30</div>
+
+			<div id = "question" class = "h2 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1">Do you want to play 'The Office' trivia?</div>
+
+			<div id = "choices">
+				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "0" data-choice = 0>Only if you won't hit me with your car</span></p>
+				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "1" data-choice = 1>Only if you won't sing the Sah-bray song</span></p>
+				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "2" data-choice = 2>Only if you'll make my dreams come true</span></p>
+				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "3" data-choice = 3>Yes, take me to the Electric City!</span></p>
+			</div>
+
+		</div>
+
+		<div class = "row" id = "result-screen">
+
+			<div id = "result-gif"></div>
+
+			<div id = "result-text"></div>
+
+			<button class = "btn btn-primary" id = "next-button">Next Question</button>
+
+		</div>
+
+		<div class = "row" id = "end-screen">
+
+			<div id = "alert"></div>
+
+				<p>Answers Correct: &nbsp;<span id = "correct"></span></p>
+
+				<p>Answers Incorrect: &nbsp;<span id = "incorrect"></span></p>
+
+				<p>% Correct: &nbsp;<span id = "percentage"></span></p>
+
+			<button class = "btn btn-primary" id = "replay-button">Play Again?</button>
+
+		</div>
+
+	</div>
+</div>
+
+<footer class = "footer text-center">
+    <span>Copyright <i class="fa fa-copyright" aria-hidden="true"></i>2016 Wesley L. Handy</span>
+    <div id = "gh-link"><a href="https://github.com/wesleylhandy/TriviaGame" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+</footer>  
+
+<script src="assets/javascript/app.js"></script>
+
+</body>
+</html>
