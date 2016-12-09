@@ -15,6 +15,7 @@ window.onload = function() {
 
 	$(".choice").click(function() { 
 		if (gameStart) {
+			gameClock.stop();
 			quiz.checkAnswer($(this).data("choice"));
 		} else {
 			quiz.gameOn();
