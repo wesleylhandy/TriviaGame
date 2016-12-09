@@ -26,7 +26,7 @@ body {
 
 #logo {
 	position: absolute;
-	right: 0;
+	right: -2.5%;
 	top: 5%;
 	transform: rotate(45deg);
 }
@@ -55,9 +55,26 @@ body {
     background-color: pink;
     box-sizing: border-box;
 }
-#result-screen, #end-screen {
+#result-screen, #next-button, #end-screen {
 	display: none;
 }
+
+#result-gif {
+
+}
+
+.btn, .btn-primary, .btn-primary:active, .btn-primary:focus, .btn-primary:visited, .btn-primary:target {
+	color: white;
+	background-color: pink;	
+	border-color: red;
+}
+
+.btn-primary:hover {
+	color: white;
+	border-color: #C60000;
+	background-color: #FF3939;
+}
+
 .footer {
 	position: absolute;
 	bottom: 0;

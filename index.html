@@ -43,21 +43,23 @@
 			<div id = "question" class = "h2 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1">Do you want to play 'The Office' trivia?</div>
 
 			<div id = "choices">
-				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "0" data-choice = 0>Only if you won't hit me with your car</span></p>
-				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "1" data-choice = 1>Only if you won't sing the Sah-bray song</span></p>
-				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "2" data-choice = 2>Only if you'll make my dreams come true</span></p>
-				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "3" data-choice = 3>Yes, take me to the Electric City!</span></p>
+				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "0" data-choice = "0">Only if you won't hit me with your car</span></p>
+				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "1" data-choice = "1">Only if you won't sing the Sah-bray song</span></p>
+				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "2" data-choice = "2">Only if you'll make my dreams come true</span></p>
+				<p><span class = "choice h4 col-xs-9 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1" id = "3" data-choice = "3">Yes, take me to the Electric City!</span></p>
 			</div>
 
 		</div>
 
 		<div class = "row" id = "result-screen">
 
-			<div id = "result-gif"></div>
+			<div id = "result-gif" class = "col-xs-10 col-sm-6 col-sm-offset-1 col-md-6 col-md-offset-2 col-lg-6 col-lg-offset-2"></div>
+			
+			<div>
+				<p class = "col-xs-10 col-sm-9 col-sm-offset-1 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1 text-center h3"><span id = "result-text"></span></p>
 
-			<div id = "result-text"></div>
-
-			<button class = "btn btn-primary" id = "next-button">Next Question</button>
+				<button class = "btn btn-primary btn-block" id = "next-button">Next Question</button>
+			</div>
 
 		</div>
 
