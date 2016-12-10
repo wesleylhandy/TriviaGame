@@ -33,6 +33,7 @@ function reset() {
 	correctAnswer = false,
 	timeUp = false,
 	gameOver = false,
+	quiz.qIndex = 10;
 	correct = 0,
 	wrong = 0,
 	randomQs = [];
@@ -47,7 +48,7 @@ var questionBank = [
 	{
 		q: "'The Office' was set it what northeastern metropolis?",
 		a: ["Scranton, PA", "Binghampton, NY", "Lancaster, PA", "Pittsburg, PA" ],
-		index: 0,
+		aIndex: 0,
 		correctAnimation: '<iframe src="http://giphy.com/embed/slsmTQGDFhAfC?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/5ouaUj87wIpP2?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'
 	},
@@ -55,7 +56,7 @@ var questionBank = [
 	{
 		q: "What was the middle initial of Dunder Mifflin's maladroit manager - Michael Scott?",
 		a: ["K.", "A.", "J.", "S."],
-		index: 2,
+		aIndex: 2,
 		correctAnimation: '<iframe src="http://giphy.com/embed/5wWf7GW1AzV6pF3MaVW?html5=true" width="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/5wWf7H89PisM6An8UAU?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'		
 	},
@@ -63,7 +64,7 @@ var questionBank = [
 	{
 		q: "Which character was part of the show during season 1?",
 		a: ["Andy Bernard", "David Wallace", "Mose", "Toby Flenderson" ],
-		index: 3,
+		aIndex: 3,
 		correctAnimation: '<iframe src="http://giphy.com/embed/12yZ3KEf43DfLG?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/DZnXGa85EDmJq?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'
 	},
@@ -71,7 +72,7 @@ var questionBank = [
 	{
 		q: "Which of the following characters was not a love interest of Michael?",
 		a: ["Karen Filipelli","Jan Levinson", "Holly Flax", "Donna"],
-		index: 0,
+		aIndex: 0,
 		correctAnimation: '<iframe src="http://giphy.com/embed/UvOtZlM2mpnZ6?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/ocU4BrDT5JTEI?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'
 	},
@@ -79,7 +80,7 @@ var questionBank = [
 	{
 		q: "Pam and Roy dated for how many years before Pam called off their wedding?",
 		a: ["Seven Years", "Nine Years", "Three Years", "Five Years"],
-		index: 1,
+		aIndex: 1,
 		correctAnimation: '<iframe src="http://giphy.com/embed/B5KV4cBwngJ8I?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/95c8VYQyrf6gg?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'		
 	},
@@ -87,7 +88,7 @@ var questionBank = [
 	{
 		q: "Which character won the Dundie for 'Hottest in the Office' every year but the last?",
 		a: ["Kelly Kapoor", "Ryan Howard", "Pam Beesly", "Erin Hannon"],
-		index: 1,
+		aIndex: 1,
 		correctAnimation: '<iframe src="http://giphy.com/embed/jo4vznLSCUVB6?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/jA4T01RxBv77W?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'
 	},
@@ -98,7 +99,7 @@ var questionBank = [
 				"Michael thinks Jan is having his baby", 
 				"Michael realizes Helene is 60 years old", 
 				"Michael is two-timing with his realtor"],
-		index: 2,
+		aIndex: 2,
 		correctAnimation: '<iframe src="http://giphy.com/embed/Mhj339AjXjpCM?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/jfRGnN954yU7u?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'
 	},
@@ -109,7 +110,7 @@ var questionBank = [
 				"Ray Romano, Roseanne Barr, Kathy Bates, Laurence Fishburne",
 				"Will Arnett, Ray Romano, Jim Carrey, Warren Buffett",
 				"Tina Fey, Jim Carrey, Bill Gates, James Spader" ],
-		index: 2,
+		aIndex: 2,
 		correctAnimation: '<iframe src="http://giphy.com/embed/y5yzypjVc9u3S?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/wKXqWCButLQT6?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'
 	},
@@ -120,7 +121,7 @@ var questionBank = [
 				"Steve Carell (Michael Scott)", 
 				"B.J. Novak (Ryan Howard)", 
 				"Paul Lieberstein (Toby Flenderson)"],
-		index: 0,
+		aIndex: 0,
 		correctAnimation: '<iframe src="http://giphy.com/embed/12Ez4WVD11ko4o?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/Cz1it5S65QGuA?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'
 	},
@@ -128,7 +129,7 @@ var questionBank = [
 	{
 		q: "Which of the following did not direct at least one episode of 'The Office'?",
 		a: ["Steve Carell", "J. J. Abrams", "Jon Favreau", "Michael Bay"],
-		index: 3,
+		aIndex: 3,
 		correctAnimation: '<iframe src="http://giphy.com/embed/yoJC2i270b1mQvcDdK?html5=true&hideSocial=true" width="100%" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>',
 		wrongAnimation: '<iframe src="http://giphy.com/embed/6ZaYjk1qC1Tby?html5=true&hideSocial=true" width="100%"  frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>'
 	}
@@ -208,11 +209,11 @@ var gameClock = {
 
 var quiz = {
 
-	questionIndex: 10,
+	qIndex: 10,
 
 	gameOn : function() {
 		// display endgame scenario if no more questions
-		if (quiz.questionIndex === 0) {
+		if (quiz.qIndex === 0) {
 
 			quiz.gameOver();
 
@@ -233,29 +234,29 @@ var quiz = {
 	// display questions, one at a time
 	getQuestion: function() {
 		
-		quiz.questionIndex--;
+		quiz.qIndex--;
 		//update display
-		$("#question").text(randomQs[quiz.questionIndex].question);
-		$("#0").text(randomQs[quiz.questionIndex].a[0]);
-		$("#1").text(randomQs[quiz.questionIndex].a[1]);
-		$("#2").text(randomQs[quiz.questionIndex].a[2]);
-		$("#3").text(randomQs[quiz.questionIndex].a[3]);
+		$("#question").text(randomQs[quiz.qIndex].q);
+		$("#0").text(randomQs[quiz.qIndex].a[0]);
+		$("#1").text(randomQs[quiz.qIndex].a[1]);
+		$("#2").text(randomQs[quiz.qIndex].a[2]);
+		$("#3").text(randomQs[quiz.qIndex].a[3]);
 	},
 	// display animation based on correct/incorrect answer
 	checkAnswer: function(data) {
 
-		if (parseInt(data) === randomQs[quiz.questionIndex].index) {
+		if (parseInt(data) === randomQs[quiz.qIndex].aIndex) {
 			correctAnswer = true;
 			correct++;
-			$("#result-gif").html(randomQs[quiz.questionIndex].correctAnimation);
+			$("#result-gif").html(randomQs[quiz.qIndex].correctAnimation);
 			$("#result-text").html("Correct! Way to go 'Big Tuna!'");
 		} else {
 			correctAnswer = false;
 			wrong++;
-			$("#result-gif").html(randomQs[quiz.questionIndex].wrongAnimation);
+			$("#result-gif").html(randomQs[quiz.qIndex].wrongAnimation);
 			$("#result-text").html("Incorrect, Plop! The right answer was:<br>"
-				+ randomQs[quiz.questionIndex].a
-				[randomQs[quiz.questionIndex].index]);
+				+ randomQs[quiz.qIndex].a
+				[randomQs[quiz.qIndex].aIndex]);
 		}
 		$("#question-screen").css("display", "none");
 		$("#result-screen").css("display", "inherit");
