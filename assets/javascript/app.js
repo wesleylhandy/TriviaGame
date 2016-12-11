@@ -248,12 +248,12 @@ var quiz = {
 		if (parseInt(data) === randomQs[quiz.qIndex].aIndex) {
 			correctAnswer = true;
 			correct++;
-			$("#result-gif").html(randomQs[quiz.aIndex].correctAnimation);
+			$("#result-gif").html(randomQs[quiz.qIndex].correctAnimation);
 			$("#result-text").html("Correct! Way to go 'Big Tuna!'");
 		} else {
 			correctAnswer = false;
 			wrong++;
-			$("#result-gif").html(randomQs[quiz.aIndex].wrongAnimation);
+			$("#result-gif").html(randomQs[quiz.qIndex].wrongAnimation);
 			$("#result-text").html("Incorrect, Plop! The right answer was:<br>"
 				+ randomQs[quiz.qIndex].a
 				[randomQs[quiz.qIndex].aIndex]);
