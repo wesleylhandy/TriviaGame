@@ -112,3 +112,36 @@ body {
 .footer a:hover {
     filter: drop-shadow(0.063em 0.063em 0em red);
 }
+
+@media screen and (max-width: 768px) {
+
+	#timer {
+		left: 0;
+	} 
+
+	#logo {
+		display: none;
+	}
+
+	#next-button {
+		top: -10%;
+	}
+
+}
+
+@media screen and (max-width: 992px) and (min-width: 769px) {
+
+	#timer {
+		left: 20%;
+	}
+
+	/*#result-text {
+		position: absolute;
+		left: 20%;
+	}*/
+
+	#logo {
+		right: -5%;
+		top: -35%;	
+	}
+}
