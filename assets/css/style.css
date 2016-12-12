@@ -60,20 +60,28 @@ body {
 	display: none;
 }
 
-#result-gif {
+#result {
 
+	position: relative;
 }
+
+#next-button {
+	position: absolute;
+	top: 0;
+	left: -.5%;
+}
+
 
 .btn, .btn-primary, .btn-primary:active, .btn-primary:focus, .btn-primary:visited, .btn-primary:target {
 	color: white;
-	background-color: pink;	
-	border-color: red;
+	background-color: #C60000;	
+	border-color: #FF3939;
 }
 
 .btn-primary:hover {
 	color: white;
-	border-color: #C60000;
-	background-color: #FF3939;
+	border-color: red;
+	background-color: pink;
 }
 
 .footer {
