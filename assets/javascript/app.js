@@ -205,6 +205,8 @@ function randomizeQuestions() {
 // gameclock as a function with functions
 var gameClock = {
 
+	tick : new Audio ("assets/sounds/switch.wav"),
+
 	time : 30,
 
 	reset: function() {
@@ -226,6 +228,7 @@ var gameClock = {
        		gameClock.stop();
        		quiz.checkAnswer(-1);
        	} else {
+       		gameClock.tick.play();
 			gameClock.time--;
 			let currentTime = gameClock.timeConverter(gameClock.time);
 	       	$("#timer").text(currentTime);
