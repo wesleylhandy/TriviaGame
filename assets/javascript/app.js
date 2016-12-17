@@ -64,6 +64,7 @@ function reset() {
 	wrong = 0,
 	randomQs = [];
 	randomizeQuestions();
+	gameClock.reset();
 	quiz.gameOn();
 }
 
@@ -190,16 +191,28 @@ var questionBank = [
 
 function randomizeQuestions() {
 	//make a copy of questionBank, so that qbank is unaltered
-	var possibleQs = questionBank.slice(0);
-	for ( let i = 0; i < questionBank.length; i++) {
+	// var possibleQs = questionBank.slice(0);
+	// for ( let i = 0; i < questionBank.length; i++) {
+	// 	//get a random question
+	// 	var randomIndex = Math.floor(Math.random() * possibleQs.length);
+	// 	var question = possibleQs[randomIndex];
+	// 	//push to selected
+	// 	randomQs.push(question);
+	// 	//remove from copied questions
+	// 	possibleQs.splice(randomIndex, 1);
+	// } 
+//revised from a naive shuffle to a Fisher-Yates shuffle
+	randomQs = questionBank.slice(0);
+	for ( let i = questionBank.length -1; i > 0; i--) {
 		//get a random question
-		var randomIndex = Math.floor(Math.random() * possibleQs.length);
-		var question = possibleQs[randomIndex];
+		var randomIndex = Math.floor(Math.random() * (i + 1));
+		var question = randomQs[randomIndex];
 		//push to selected
-		randomQs.push(question);
+		randomQs[randomIndex] = randomQs[i];
 		//remove from copied questions
-		possibleQs.splice(randomIndex, 1);
+		randomQs[i] = question;
 	}
+	console.log(randomQs);
 }
 
 // gameclock as a function with functions
@@ -207,10 +220,10 @@ var gameClock = {
 
 	tick : new Audio ("assets/sounds/switch.wav"),
 
-	time : 30,
+	time : 45,
 
 	reset: function() {
-		gameClock.time = 30;
+		gameClock.time = 45;
 		$("#timer").text(gameClock.timeConverter(gameClock.time));
 	},
 
@@ -226,7 +239,7 @@ var gameClock = {
 		if (gameClock.time === 0) {
        		timeUp = true;
        		gameClock.stop();
-       		quiz.checkAnswer(-1);
+       		quiz.gameOver();
        	} else {
        		gameClock.tick.play();
 			gameClock.time--;
@@ -274,7 +287,7 @@ var quiz = {
 			$("#question-screen").css("display", "inherit");
 
 			gameStart = true; //flag .choice click function to stay in quiz
-			gameClock.reset(); //reset clock to 30 sec
+			// gameClock.reset(); //reset clock to 30 sec
 			$("#timer").css("display", "inherit"); //display clock
 			gameClock.start(); //start gameClock
 			quiz.getQuestion(); 
@@ -320,13 +333,21 @@ var quiz = {
 	},
 
 	gameOver: function() {	
-		//hide results and show end-game scenario		
+		//hide results and show end-game scenario
+		$("#question-screen").css("display", "none");		
 		$("#result-screen").css("display", "none");
 		$("#next-button").css("display", "none");
 		$("#end-screen").css("display", "inherit");
 
 		$("#correct").text(correct);
 		$("#incorrect").text(wrong);
+		var unanswered;
+		if ((correct + wrong) === 10) {
+			unanswered = "None!";
+		} else {
+			unanswered = 10 - correct + wrong;
+		}
+		$("#unanswered").text(unanswered);
 		$("#percentage").text(Math.round((correct/10)*100) + "%");
 		//play theme music again
 		vol = 1.0;
