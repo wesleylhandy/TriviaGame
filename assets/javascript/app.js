@@ -7,6 +7,12 @@ let gameStart = false,
 	wrong = 0,
 	randomQs = [];
 
+//set date
+let d = new Date();
+let year = d.getFullYear();
+
+$("#year").text(year);
+
 //set up audio
 let vol = 1.0, //initial volume setting
 	interval = 250; //interval used in music.fadeout();
