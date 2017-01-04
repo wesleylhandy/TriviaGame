@@ -37,7 +37,7 @@ let music = {
 
 //wait for window to load before allowing clicks
 
-window.onload = function() {
+$(document).ready(function(){
 
 	music.gameAudio.play();
 
@@ -57,7 +57,7 @@ window.onload = function() {
 
 	//only shows after all questions answered
 	$("#replay-button").click(reset);
-}
+});
 
 function reset() {
 	music.fadeout();
