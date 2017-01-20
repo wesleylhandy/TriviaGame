@@ -90,7 +90,7 @@ var questionBank = [
 
 	{
 		q: "What was the middle initial of Dunder Mifflin's maladroit manager - Michael Scott?",
-		a: ["K.", "A.", "J.", "S."],
+		a: ["K.", "A.", "G.", "J."],
 		aIndex: 2,
 		correctAnimation: "assets/images/michael-running-win.gif",
 		wrongAnimation: "assets/images/michael-explain-lose.gif"
