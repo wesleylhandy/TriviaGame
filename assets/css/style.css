@@ -9,6 +9,10 @@ body {
 	margin-bottom: 8.5em;
 }
 
+#main-top {
+	position: relative;
+}
+
 .jumbotron {
 	background-color: #ddd;
 	background: url(../images/The_Office_US_logo.png) no-repeat;
@@ -18,6 +22,21 @@ body {
 
 .jumbotron p {
 	/*filter: drop-shadow(0.03em 0.03em 0.06em red);*/
+}
+
+#volume-toggle {
+	position: absolute;
+	right: -2%;
+	top: 1%;
+	border: 1px solid red;
+	border-radius: 50%;
+	color: red;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 125%;
+	width: 2em;
+	height: 2em;
+	padding-top:0.375em;
 }
 
 #game-area {
@@ -34,6 +53,8 @@ body {
 #question-screen {
 	position: relative;
 }
+
+
 
 #timer {
 	display: none;
@@ -125,6 +146,11 @@ body {
 
 	#next-button {
 		top: -10%;
+	}
+
+	#volume-toggle {
+		right: 1%;
+		top: 100px;
 	}
 
 }

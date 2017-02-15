@@ -32,7 +32,11 @@ let music = {
 				      clearInterval(fade);
 				    }
 				  }, interval)
-			}
+			},
+	toggleVolume: function() {
+		
+		music.gameAudio.volume = $("#volume-toggle").data("vol");
+	}
 }
 
 //wait for window to load before allowing clicks
@@ -40,6 +44,26 @@ let music = {
 $(document).ready(function(){
 
 	music.gameAudio.play();
+
+	$("#volume-toggle").click(function(){
+		var $thisIcon = $(this).children('i');
+		var $thisVol = parseFloat($(this).data("vol"));
+		function newClass(){
+			if($thisVol > 0.5) {
+				$thisVol = 0.5;
+				return "fa fa-volume-down";
+			} else if ($thisVol > 0.0) {
+				$thisVol = 0;
+				return "fa fa-volume-off";
+			} else {
+				$thisVol = 1.0;
+				return "fa fa-volume-up";
+			}
+		}
+		$thisIcon.removeClass().addClass(newClass);
+		$(this).data("vol", $thisVol);
+		music.toggleVolume();
+	});
 
 	randomizeQuestions();
 	// click function for answers
@@ -142,7 +166,7 @@ var questionBank = [
 		q: "Michael breaks up with Pamela's mom, Helene, on her birthday because..",
 		a: ["Michael thinks he has herpes", 
 				"Michael thinks Jan is having his baby", 
-				"Michael realizes Helene is 60 years old", 
+				"Michael realizes Helene is 58 years old", 
 				"Michael is two-timing with his realtor"],
 		aIndex: 2,
 		correctAnimation: "assets/images/michael-fine-win.gif",
@@ -287,6 +311,7 @@ var quiz = {
 
 		} else {
 			//hide results and end-game and display quiz
+			$("#volume-toggle").hide('fast');
 			$("#result-screen").css("display", "none");
 			$("#next-button").css("display", "none");
 			$("#end-screen").css("display", "none");
@@ -356,8 +381,8 @@ var quiz = {
 		$("#unanswered").text(unanswered);
 		$("#percentage").text(Math.round((correct/10)*100) + "%");
 		//play theme music again
-		vol = 1.0;
-		music.gameAudio.volume = 1.0;
+		$("#volume-toggle").show('fast');
+		music.gameAudio.volume = $("#volume-toggle").data("vol");
 		music.gameAudio.play();
 		//show play again button
 		setTimeout(function(){ $("#replay-button").css("display", "inherit");}, 3000);
